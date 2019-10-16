@@ -1,0 +1,101 @@
+#classicformpage .view {
+    background-image: url("data:image/jpeg;base64,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");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+  }
+  
+  #classicformpage .gradient {
+    background: -webkit-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(72, 15, 144, 0.4) 100%
+    );
+    background: -webkit-gradient(
+      linear,
+      45deg,
+      from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)
+    );
+    background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(72, 15, 144, 0.4) 100%
+    );
+  }
+  
+  #classicformpage .card {
+    background-color: rgba(126, 123, 215, 0.2);
+  }
+  
+  #classicformpage h6 {
+    line-height: 1.7;
+  }
+  
+  #classicformpage .navbar {
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+  }
+  
+  #classicformpage .top-nav-collapse {
+    background: #424f95 !important;
+  }
+  
+  @media (max-width: 768px) {
+    #classicformpage .navbar:not(.top-nav-collapse) {
+      background: #424f95 !important;
+    }
+  }
+  
+  #classicformpage label {
+    color: #fff !important;
+  }
+  .vl-innertext {
+  color: white;
+  
+  ;
+  }
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
