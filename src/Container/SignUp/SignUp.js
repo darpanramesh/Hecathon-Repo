@@ -24,7 +24,6 @@ import {
   MDBAnimation
 } from "mdbreact";
 import "./SignUP.css";
-import { async } from 'q';
 
 class SignUp extends React.Component{
   constructor(){
@@ -78,7 +77,7 @@ class SignUp extends React.Component{
           />
         );
         return (
-          <div id="classicformpage">
+          <div style={{background:"url('http://sheffieldhatters.com/wp-content/uploads/2014/09/backgrounds-for-websites-3.jpg')"}} id="classicformpage">
             <Router>
               <div>
                 <MDBNavbar dark expand="md" fixed="top">
@@ -170,7 +169,7 @@ class SignUp extends React.Component{
                           </MDBCardBody>
                         </MDBCard>
                       </MDBAnimation>
-                        <div id="snackbar" className={this.props.snackBar}>{this.props.signupErr}</div>
+                        <div id="snackbar" className={this.props.message}>{this.props.errormessage}</div>
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>
@@ -186,8 +185,8 @@ class SignUp extends React.Component{
 const mapStateToProps = state => {
   console.log(state.SignupErr,state.snackBar)
     return {
-      signupErr: state.SignupErr,
-      snackBar: state.snackBar
+message: state.message,
+errormessage:state.errormessage
     }
 }
 const mapDispatchToProps = dispatch => {

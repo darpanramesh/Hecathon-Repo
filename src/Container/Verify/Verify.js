@@ -2,9 +2,11 @@ import React from 'react'
 import './Verify.css'
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
+import {connect} from 'react-redux'
+import {resendEmail,Logout} from '../../Store/Actions/auth-action'
+import {MDBBtn} from 'mdbreact'
 import iconVerify from '../../Images/verify.jpg'
-export default class Verify extends React.Component {
+class Verify extends React.Component {
     render() {
         return (
             <div>
@@ -15,9 +17,10 @@ export default class Verify extends React.Component {
                         <div className="img-div">
                             <img className="img-div" src={iconVerify} />
                             <p className="head1">Verify your email to proceed</p>
-                            <p className="para">We just sent an email to the address: <b></b></p>
+                            <p className="para">We just sent an email to the address: {this.props.email} <b></b></p>
                             <p className="para2">Please check your email and click on the link provided to verify your address.</p>
-                            <Button color='deep-orange' name="resend verification email" /></div>
+                            <MDBBtn  onClick={()=>this.props.resendEmail()} color="indigo">resend verification email</MDBBtn>
+                            </div>
                     </div> 
                     </Paper>
                     </Grid>
@@ -26,3 +29,19 @@ export default class Verify extends React.Component {
                 )
             }
 }
+
+const mapStateToProps = state => {
+      return {
+  message: state.message,
+  errormessage:state.errormessage
+      }
+  }
+  const mapDispatchToProps = dispatch => {
+      return {
+        resendEmail: () => dispatch(resendEmail()),
+         userLogout: () => dispatch(Logout()),
+         
+      }
+  
+  }
+  export default connect(mapStateToProps,mapDispatchToProps)(Verify)

@@ -68,7 +68,7 @@ class Login extends React.Component{
           />
         );
         return (
-          <div id="classicformpage">
+          <div style={{background:"url('http://sheffieldhatters.com/wp-content/uploads/2014/09/backgrounds-for-websites-3.jpg')"}} id="classicformpage">
             <Router>
               <div>
                 <MDBNavbar dark expand="md" fixed="top">
@@ -98,7 +98,7 @@ class Login extends React.Component{
                   <MDBRow>
     
                     <MDBCol style={{marginLeft:'30%'}} md="6" xl="5" className="mb-4">
-                      <MDBAnimation type="fadeInRight" delay=".3s">
+                      <MDBAnimation type="fadeIn  Left" delay=".3s">
                         <MDBCard id="classic-card">
                           <MDBCardBody className="white-text">
                             <h3 className="text-center">
@@ -144,7 +144,7 @@ class Login extends React.Component{
                           </MDBCardBody>
                         </MDBCard>
                       </MDBAnimation>
-                        <div id="snackbar" className={this.props.snackBar}>{this.props.signupErr}</div>
+                      <div id="snackbar" className={this.props.message}>{this.props.errormessage}</div>
                     </MDBCol>
                   </MDBRow>
                 </MDBContainer>
@@ -159,8 +159,8 @@ class Login extends React.Component{
 
 const mapStateToProps = state => {
     return {
-      signupErr: state.SignupErr,
-      snackBar: state.snackBar
+      message: state.message,
+      errormessage:state.errormessage
     }
 }
 const mapDispatchToProps = dispatch => {

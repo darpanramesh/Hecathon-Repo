@@ -1,149 +1,44 @@
-const initalState = {
-    name: 'snackbar',
-    message: 'demo',
-    currentUser: ''
+
+let Initial_State = {
+    user: "",
+    errormessage: "",
+    message: "hidden"
 }
 
-const ALL_STATE = {
-    isRegister: false,
-    isSigned: false,
-    isLogin: false,
-    SignupErr: false,
-    snackBar: 'snackbar'
 
-}
-const Reducer = (state = ALL_STATE, action) => {
-console.log(action)
-
+let Reducer = (state = Initial_State, action) => {
     switch (action.type) {
-        case "signupSucess":
-            return { ...state }
-            break;
-
-        case "showSignupErr":
-            state.SignupErr = action.payload
-            state.snackBar = "show"
+        case "error": {
+            state.errormessage = action.message
+            state.message = "show"
             return {
-                ...state, snackBar: state.snackBar, SignupErr: state.SignupErr.concat()
+                ...state, errormessage: state.errormessage, message: state.message.concat()
             }
-            break;
-
-        case "hideSignupErr":
-            state.SignupErr = ""
-            state.snackBar = "snackbar"
+        }
+        case "errorerutn": {
+            state.message = "hidden"
             return {
-                ...state, snackBar: state.snackBar, SignupErr: state.SignupErr.concat()
+                ...state, message: state.message.concat()
             }
-            break;
+        }
 
-        case "loginSucess":
-            return {...state}
-            break;
+        case "errormessage" : {
+        state.errormessage = action.message
+        state.message = "show"
+        return {
+            ...state,errormessage : state.errormessage,message: state.message.concat()
+        }
+        }
 
-        case 'facebookUser':
-            return { ...state }
-            break;
-
-        case 'logout':
-            localStorage.removeItem('user')
-            return { ...state }
-            break;
-
-        default: {
-            return state
+        case "returnmessae" : {
+            state.message = "xyz"
+            return {
+            ...state,message: state.message.concat()
+            }
+        }
+        default: return {
+            state
         }
     }
 }
-
-
-
 export default Reducer
-
-
-
-
-
-
-// const Reducer = (state = initalState, action) => {
-//     switch (action.type) {
-
-//         case "addUser":
-//             return state
-//             break;
-
-
-//         // user Login
-
-//         case 'Login': state.currentUser = action.payload
-
-//             return { ...state, currentUser: state.currentUser }
-//             break;
-
-//         case 'facebookUser':
-//             return state
-//             break;
-
-//         case "logout":
-//             localStorage.removeItem('user')
-//             return state
-
-//         default: return { ...state }
-//     }
-
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const AuthReducer = (state = initalState, action) => {
-//     switch (action.type) {
-//         // res signup
-
-
-//         case "ShowalreadyName": state.message = 'Sorry Name Already Registerd'
-//             state.name = 'show'
-//             return { ...state, message: state.message, name: state.name.concat() }
-//             break;
-
-//         case "HidealreadyName": state.name = 'snackbar'
-//             return { ...state, name: state.name.concat() }
-//             break;
-
-//         case "addResturant":
-//             return state
-//             break;
-
-//         // user signup
-
-
-//         case "addUser":
-//             return state
-//             break;
-
-
-//         // user Login
-
-//         case 'Login': state.currentUser = action.payload
-
-//             return { ...state, currentUser: state.currentUser }
-//             break;
-
-//         case "logout":
-//             localStorage.removeItem('user')
-//             return state
-
-//         default: return { ...state }
-//     }
-
-
-// }

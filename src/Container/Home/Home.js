@@ -1,34 +1,40 @@
 import React from 'react'
-import {firebaseApp} from '../../Config/Firebase/firebase'
-import {Verify} from '../index'
-export default class Home extends React.Component{
-    constructor(){
+import { firebaseApp } from '../../Config/Firebase/firebase'
+import { Verify } from '../index'
+import{NavbarPage} from '../../Component/index'
+import './Home.css'
+
+export default class Home extends React.Component {
+    constructor() {
         super();
-        this.state={
-            check:'',
+        this.state = {
+            check: '',
+            userEmail:''
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         let that = this
-        firebaseApp.auth().onAuthStateChanged(function(user) {
+        firebaseApp.auth().onAuthStateChanged(function (user) {
             if (user) {
-              console.log(user.emailVerified);
-              let emailVerified = user.emailVerified;
-              that.setState({check:emailVerified})
+                console.log(user.email);
+                let emailVerified = user.emailVerified;
+                that.setState({ check: emailVerified,userEmail:user.email })
             } else {
-              // No user is signed in.
+                // No user is signed in.
             }
-          });
+        });
     }
     render() {
         return (
             <div>
                 {this.state.check ?
-                <h1>Home</h1>
-                :
-                <div>
-                <Verify />    
-                </div>}
+                    <div >
+                        <NavbarPage path={this.props.history} list={[{ name: 'Home',path:'/Home' }]} />
+                    </div>
+                    :
+                    <div>
+                        <Verify email={this.state.userEmail} />
+                    </div>}
             </div>
         )
     }
